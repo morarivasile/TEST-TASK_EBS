@@ -28,6 +28,9 @@
 		C30C000D2549EE2300AFB468 /* ProductsListModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C000C2549EE2300AFB468 /* ProductsListModuleProtocols.swift */; };
 		C30C00132549F73D00AFB468 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C00122549F73D00AFB468 /* ProductListTableViewCell.swift */; };
 		C30C00162549F74F00AFB468 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30C00152549F74F00AFB468 /* ProductListTableViewCell.xib */; };
+		C30C001B254A023700AFB468 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C001A254A023700AFB468 /* ImageCache.swift */; };
+		C30C001E254A027900AFB468 /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C001D254A027900AFB468 /* ImageURLProtocol.swift */; };
+		C30C0021254A02A600AFB468 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C0020254A02A600AFB468 /* ImageItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		C30C000C2549EE2300AFB468 /* ProductsListModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListModuleProtocols.swift; sourceTree = "<group>"; };
 		C30C00122549F73D00AFB468 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		C30C00152549F74F00AFB468 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
+		C30C001A254A023700AFB468 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		C30C001D254A027900AFB468 /* ImageURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLProtocol.swift; sourceTree = "<group>"; };
+		C30C0020254A02A600AFB468 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +92,10 @@
 		C308612F2549CD3500D43A32 /* EBS_TEST */ = {
 			isa = PBXGroup;
 			children = (
-				C308616B2549D2FA00D43A32 /* Networking */,
+				C30C0019254A021500AFB468 /* Image Cache */,
 				C30861302549CD3500D43A32 /* AppDelegate.swift */,
 				C30861662549D11300D43A32 /* MainCoordinator.swift */,
+				C308616B2549D2FA00D43A32 /* Networking */,
 				C308615B2549CF6200D43A32 /* Products List */,
 				C308615C2549CF6D00D43A32 /* Product Details */,
 				C308614B2549CE2A00D43A32 /* Protocols */,
@@ -176,6 +183,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		C30C0019254A021500AFB468 /* Image Cache */ = {
+			isa = PBXGroup;
+			children = (
+				C30C001A254A023700AFB468 /* ImageCache.swift */,
+				C30C001D254A027900AFB468 /* ImageURLProtocol.swift */,
+				C30C0020254A02A600AFB468 /* ImageItem.swift */,
+			);
+			path = "Image Cache";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,12 +267,15 @@
 			files = (
 				C30861772549E4D800D43A32 /* EBSAPIClient.swift in Sources */,
 				C308617B2549E54700D43A32 /* ProductResponse.swift in Sources */,
+				C30C001B254A023700AFB468 /* ImageCache.swift in Sources */,
 				C30861512549CE7300D43A32 /* UIViewController+NibLoaded.swift in Sources */,
 				C30C000D2549EE2300AFB468 /* ProductsListModuleProtocols.swift in Sources */,
+				C30C001E254A027900AFB468 /* ImageURLProtocol.swift in Sources */,
 				C30861712549D4AC00D43A32 /* Resource.swift in Sources */,
 				C30861672549D11300D43A32 /* MainCoordinator.swift in Sources */,
 				C30C00072549ED5F00AFB468 /* ProductViewModel.swift in Sources */,
 				C308614D2549CE3200D43A32 /* Coordinator.swift in Sources */,
+				C30C0021254A02A600AFB468 /* ImageItem.swift in Sources */,
 				C30C00042549EA1F00AFB468 /* ProductsListPresenter.swift in Sources */,
 				C30C00132549F73D00AFB468 /* ProductListTableViewCell.swift in Sources */,
 				C308616E2549D49B00D43A32 /* HttpMethod.swift in Sources */,

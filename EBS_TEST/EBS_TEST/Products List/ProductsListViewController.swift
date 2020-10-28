@@ -45,7 +45,7 @@ extension ProductsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductListTableViewCell.reuseIdentifier, for: indexPath)
         
         if let productCell = cell as? ProductListTableViewCell {
-            productCell.textLabel?.text = productViewModels[indexPath.row].title
+            productCell.configure(for: productViewModels[indexPath.row])
         }
         
         return cell
