@@ -9,9 +9,8 @@ import Foundation
 
 enum APIError: Error {
     case requestFailed(cause: String)
-    case jsonConversionFailure
     case invalidData
-    case jsonParsingFailure
+    case jsonParsingFailure(Error)
     case unsuccessfulResponse(code: Int)
     
     var description: String {
@@ -20,7 +19,6 @@ enum APIError: Error {
         case .invalidData: return "Invalid Data"
         case .unsuccessfulResponse: return "Unsuccessful Response"
         case .jsonParsingFailure: return "JSON Parsing Failure"
-        case .jsonConversionFailure: return "JSON Conversion Failure"
         }
     }
 }

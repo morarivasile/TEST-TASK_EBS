@@ -9,7 +9,7 @@ import Foundation
 
 struct Resource<A> {
     var urlRequest: URLRequest
-    let parse: (Data) -> A?
+    let parse: (Data) -> Result<A, Error>
 }
 
 extension Resource {
@@ -22,7 +22,11 @@ extension Resource where A: Decodable {
     init(get url: URL, decoder: JSONDecoder = JSONDecoder()) {
         urlRequest = URLRequest(url: url)
         parse = { data in
-            try? decoder.decode(A.self, from: data)
+            do {
+                return .success(try decoder.decode(A.self, from: data))
+            } catch {
+                return .failure(error)
+            }
         }
     }
     
@@ -35,7 +39,11 @@ extension Resource where A: Decodable {
         }
         
         parse = { data in
-            try? decoder.decode(A.self, from: data)
+            do {
+                return .success(try decoder.decode(A.self, from: data))
+            } catch {
+                return .failure(error)
+            }
         }
     }
 }
@@ -54,10 +62,9 @@ extension URLSession {
             }
             
             if let data = data {
-                if let resource = resource.parse(data) {
-                    completion(.success(resource))
-                } else {
-                    completion(.failure(APIError.jsonConversionFailure))
+                switch resource.parse(data) {
+                case let .success(resource): completion(.success(resource))
+                case let .failure(error): completion(.failure(APIError.jsonParsingFailure(error)))
                 }
             } else {
                 completion(.failure(APIError.invalidData))

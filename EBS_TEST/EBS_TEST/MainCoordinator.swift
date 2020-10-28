@@ -17,6 +17,15 @@ final class MainCoordinator: Coordinator {
     
     func start() {
         let viewController = ProductsListViewController.nibLoaded
+        let dataService = EBSAPIClient()
+        let presenter = ProductsListPresenter()
+        let interactor = ProductsListInteractor()
+        
+        viewController.presenter = presenter
+        presenter.view = viewController
+        presenter.interactor = interactor
+        interactor.dataService = dataService
+        
         navigationController.pushViewController(viewController, animated: true)
     }
 }

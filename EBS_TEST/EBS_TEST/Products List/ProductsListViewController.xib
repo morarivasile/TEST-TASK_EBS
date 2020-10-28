@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductsListViewController" customModule="EBS_TEST" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="pGS-Ho-E5i" id="2bN-i7-G2H"/>
                 <outlet property="view" destination="iN0-l3-epB" id="VyB-ys-scG"/>
             </connections>
         </placeholder>
@@ -17,14 +18,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pGS-Ho-E5i">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemIndigoColor"/>
-            <point key="canvasLocation" x="-278" y="153"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pGS-Ho-E5i" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="FxP-Ce-MHB"/>
+                <constraint firstItem="pGS-Ho-E5i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RvG-B3-Mab"/>
+                <constraint firstItem="pGS-Ho-E5i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="hIi-3c-Hkw"/>
+                <constraint firstAttribute="bottom" secondItem="pGS-Ho-E5i" secondAttribute="bottom" id="zcD-Rj-PRZ"/>
+            </constraints>
+            <point key="canvasLocation" x="-278.26086956521743" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
