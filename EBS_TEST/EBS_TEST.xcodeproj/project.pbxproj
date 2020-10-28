@@ -10,6 +10,12 @@
 		C30861312549CD3500D43A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30861302549CD3500D43A32 /* AppDelegate.swift */; };
 		C308613A2549CD3800D43A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30861392549CD3800D43A32 /* Assets.xcassets */; };
 		C308613D2549CD3800D43A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C308613B2549CD3800D43A32 /* LaunchScreen.storyboard */; };
+		C308614D2549CE3200D43A32 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C308614C2549CE3200D43A32 /* Coordinator.swift */; };
+		C30861512549CE7300D43A32 /* UIViewController+NibLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30861502549CE7300D43A32 /* UIViewController+NibLoaded.swift */; };
+		C30861542549CECE00D43A32 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30861532549CECE00D43A32 /* ProductsListViewController.swift */; };
+		C30861572549CEEB00D43A32 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30861562549CEEB00D43A32 /* ProductDetailsViewController.swift */; };
+		C30861602549CFCC00D43A32 /* ProductsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C308615F2549CFCC00D43A32 /* ProductsListViewController.xib */; };
+		C30861632549CFD600D43A32 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30861622549CFD600D43A32 /* ProductDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +24,12 @@
 		C30861392549CD3800D43A32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C308613C2549CD3800D43A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C308613E2549CD3800D43A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C308614C2549CE3200D43A32 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C30861502549CE7300D43A32 /* UIViewController+NibLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NibLoaded.swift"; sourceTree = "<group>"; };
+		C30861532549CECE00D43A32 /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
+		C30861562549CEEB00D43A32 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		C308615F2549CFCC00D43A32 /* ProductsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsListViewController.xib; sourceTree = "<group>"; };
+		C30861622549CFD600D43A32 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,11 +63,57 @@
 			isa = PBXGroup;
 			children = (
 				C30861302549CD3500D43A32 /* AppDelegate.swift */,
-				C30861392549CD3800D43A32 /* Assets.xcassets */,
+				C308615B2549CF6200D43A32 /* Products List */,
+				C308615C2549CF6D00D43A32 /* Product Details */,
+				C308614B2549CE2A00D43A32 /* Protocols */,
+				C308615E2549CF9A00D43A32 /* Resources */,
+				C308615D2549CF8300D43A32 /* Supporting Files */,
+			);
+			path = EBS_TEST;
+			sourceTree = "<group>";
+		};
+		C308614B2549CE2A00D43A32 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C308614C2549CE3200D43A32 /* Coordinator.swift */,
+				C30861502549CE7300D43A32 /* UIViewController+NibLoaded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C308615B2549CF6200D43A32 /* Products List */ = {
+			isa = PBXGroup;
+			children = (
+				C30861532549CECE00D43A32 /* ProductsListViewController.swift */,
+				C308615F2549CFCC00D43A32 /* ProductsListViewController.xib */,
+			);
+			path = "Products List";
+			sourceTree = "<group>";
+		};
+		C308615C2549CF6D00D43A32 /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				C30861562549CEEB00D43A32 /* ProductDetailsViewController.swift */,
+				C30861622549CFD600D43A32 /* ProductDetailsViewController.xib */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		C308615D2549CF8300D43A32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				C308613B2549CD3800D43A32 /* LaunchScreen.storyboard */,
 				C308613E2549CD3800D43A32 /* Info.plist */,
 			);
-			path = EBS_TEST;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C308615E2549CF9A00D43A32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C30861392549CD3800D43A32 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,7 +173,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30861602549CFCC00D43A32 /* ProductsListViewController.xib in Resources */,
 				C308613D2549CD3800D43A32 /* LaunchScreen.storyboard in Resources */,
+				C30861632549CFD600D43A32 /* ProductDetailsViewController.xib in Resources */,
 				C308613A2549CD3800D43A32 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,7 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30861512549CE7300D43A32 /* UIViewController+NibLoaded.swift in Sources */,
+				C308614D2549CE3200D43A32 /* Coordinator.swift in Sources */,
 				C30861312549CD3500D43A32 /* AppDelegate.swift in Sources */,
+				C30861572549CEEB00D43A32 /* ProductDetailsViewController.swift in Sources */,
+				C30861542549CECE00D43A32 /* ProductsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
