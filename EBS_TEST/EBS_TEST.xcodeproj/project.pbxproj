@@ -16,6 +16,7 @@
 		C30861572549CEEB00D43A32 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30861562549CEEB00D43A32 /* ProductDetailsViewController.swift */; };
 		C30861602549CFCC00D43A32 /* ProductsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C308615F2549CFCC00D43A32 /* ProductsListViewController.xib */; };
 		C30861632549CFD600D43A32 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30861622549CFD600D43A32 /* ProductDetailsViewController.xib */; };
+		C30861672549D11300D43A32 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30861662549D11300D43A32 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C30861562549CEEB00D43A32 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		C308615F2549CFCC00D43A32 /* ProductsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsListViewController.xib; sourceTree = "<group>"; };
 		C30861622549CFD600D43A32 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
+		C30861662549D11300D43A32 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				C30861302549CD3500D43A32 /* AppDelegate.swift */,
+				C30861662549D11300D43A32 /* MainCoordinator.swift */,
 				C308615B2549CF6200D43A32 /* Products List */,
 				C308615C2549CF6D00D43A32 /* Product Details */,
 				C308614B2549CE2A00D43A32 /* Protocols */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30861512549CE7300D43A32 /* UIViewController+NibLoaded.swift in Sources */,
+				C30861672549D11300D43A32 /* MainCoordinator.swift in Sources */,
 				C308614D2549CE3200D43A32 /* Coordinator.swift in Sources */,
 				C30861312549CD3500D43A32 /* AppDelegate.swift in Sources */,
 				C30861572549CEEB00D43A32 /* ProductDetailsViewController.swift in Sources */,
@@ -332,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX8377YQ35;
-				INFOPLIST_FILE = EBS_TEST/Info.plist;
+				INFOPLIST_FILE = "EBS_TEST/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX8377YQ35;
-				INFOPLIST_FILE = EBS_TEST/Info.plist;
+				INFOPLIST_FILE = "EBS_TEST/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
