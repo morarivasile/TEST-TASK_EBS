@@ -19,14 +19,14 @@ extension Resource {
 }
 
 extension Resource where A: Decodable {
-    init(get url: URL) {
+    init(get url: URL, decoder: JSONDecoder = JSONDecoder()) {
         urlRequest = URLRequest(url: url)
         parse = { data in
-            try? JSONDecoder().decode(A.self, from: data)
+            try? decoder.decode(A.self, from: data)
         }
     }
     
-    init<Body: Encodable>(url: URL, method: HttpMethod<Body>) {
+    init<Body: Encodable>(url: URL, method: HttpMethod<Body>, decoder: JSONDecoder = JSONDecoder()) {
         urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.method
         
@@ -35,21 +35,21 @@ extension Resource where A: Decodable {
         }
         
         parse = { data in
-            try? JSONDecoder().decode(A.self, from: data)
+            try? decoder.decode(A.self, from: data)
         }
     }
 }
 
 extension URLSession {
-    func load<A>(_ resource: Resource<A>, completion: @escaping (Result<A, APIError>) -> ()) {
+    func load<A>(_ resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) {
         dataTask(with: resource.urlRequest) { data, response, error in
             if let error = error {
-                completion(.failure(.requestFailed(cause: error.localizedDescription)))
+                completion(.failure(APIError.requestFailed(cause: error.localizedDescription)))
                 return
             }
             
             if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
-                completion(.failure(.unsuccessfulResponse(code: response.statusCode)))
+                completion(.failure(APIError.unsuccessfulResponse(code: response.statusCode)))
                 return
             }
             
@@ -57,13 +57,12 @@ extension URLSession {
                 if let resource = resource.parse(data) {
                     completion(.success(resource))
                 } else {
-                    completion(.failure(.jsonConversionFailure))
+                    completion(.failure(APIError.jsonConversionFailure))
                 }
             } else {
-                completion(.failure(.invalidData))
+                completion(.failure(APIError.invalidData))
             }
             
         }.resume()
     }
 }
-
