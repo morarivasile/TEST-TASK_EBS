@@ -11,6 +11,7 @@ final class ProductsListViewController: UIViewController {
     
     @IBOutlet weak private var tableView: UITableView! {
         didSet {
+            tableView.delegate = self
             tableView.dataSource = self
             tableView.prefetchDataSource = self
             tableView.registerCells(classes: [ProductListTableViewCell.self])
@@ -30,7 +31,7 @@ final class ProductsListViewController: UIViewController {
     }
     
     private func isLoadingCell(for indexPath: IndexPath) -> Bool {
-        return indexPath.row >= productViewModels.count
+        return indexPath.row == productViewModels.count - 1
     }
 }
 
@@ -52,11 +53,19 @@ extension ProductsListViewController: UITableViewDataSource {
     }
 }
 
+extension ProductsListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row == productViewModels.count - 1 {
+//            presenter.loadProductsList()
+//        }
+    }
+}
+
 extension ProductsListViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        if indexPaths.contains(where: isLoadingCell) {
-            presenter.loadProductsList()
-        }
+//        if indexPaths.contains(where: isLoadingCell) {
+//            presenter.loadProductsList()
+//        }
     }
 }
 

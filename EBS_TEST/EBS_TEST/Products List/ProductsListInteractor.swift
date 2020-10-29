@@ -13,6 +13,7 @@ final class ProductsListInteractor {
     private var productList: [ProductResponse] = []
     private var currentPage: Int = 1
     private let pageSize: Int
+    private var isFetchInProgress = false
     
     private var offset: Int {
         return productList.count
@@ -31,16 +32,23 @@ final class ProductsListInteractor {
 
 extension ProductsListInteractor: ProductsListInteractorProtocol {
     func loadProductsList(completion: @escaping (Result<[ProductResponse], Error>) -> Void) {
+        guard !isFetchInProgress else { return }
+        
+        isFetchInProgress = true
+        
         dataService?.getProducts(offset: offset, limit: limit) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case let .success(products):
                 self.productList.append(contentsOf: products)
+                self.currentPage += 1
                 completion(.success(self.productList))
             case let .failure(error):
                 completion(.failure(error))
             }
+            
+            self.isFetchInProgress = false
         }
     }
 }

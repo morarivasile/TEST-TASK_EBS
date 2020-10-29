@@ -10,10 +10,25 @@ import Foundation
 
 
 final class ProductListTableViewCell: UITableViewCell {
-    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak private var productImageView: UIImageView!
+    
+    @IBOutlet weak private var titleLabel: UILabel!
+    
+    @IBOutlet weak private var subtitleLabel: UILabel!
+    
+    @IBOutlet weak private var priceLabel: UILabel!
+    
     
     func configure(for viewModel: ProductViewModel) {
-//        textLabel?.text = viewModel.title
+        titleLabel.text = viewModel.title
+        subtitleLabel.text = viewModel.description
+        
+        var price = viewModel.displayPrice.price
+        if let oldPrice = viewModel.displayPrice.oldPrice {
+            price += " \(oldPrice)"
+        }
+        
+        priceLabel.text = price
         productImageView.setImage(stringURL: viewModel.imageStringURL)
     }
 }

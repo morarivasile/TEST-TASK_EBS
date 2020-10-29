@@ -13,6 +13,6 @@ struct ProductResponse: Codable {
     let shortDescription: String
     let image: String
     let price: Int
-    let salePercent: Int?
+    let salePrecent: Int?
     let details: String
 }

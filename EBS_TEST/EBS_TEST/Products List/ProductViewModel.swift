@@ -9,11 +9,44 @@ import Foundation
 
 struct ProductViewModel {
     
-    let title: String
-    let imageStringURL: String
+    private(set) var product: ProductResponse
+    
+    var title: String {
+        return product.title
+    }
+    
+    var description: String {
+        return product.shortDescription
+    }
+    
+    var imageStringURL: String {
+        return product.image
+    }
+    
+    var displayPrice: DisplayPrice {
+        if let percent = product.salePrecent, percent > 0 {
+            let price = product.price - (product.price * percent / 100)
+            return .init(price: price, oldPrice: product.price)
+        } else {
+            return .init(price: product.price, oldPrice: nil)
+        }
+    }
+    
     
     init(_ product: ProductResponse) {
-        self.title = product.title
-        self.imageStringURL = product.image
+        self.product = product
+    }
+    
+    struct DisplayPrice {
+        let price: String
+        var oldPrice: String? = nil
+        
+        init(price: Int, oldPrice: Int?) {
+            self.price = "$ \(price)"
+            
+            if let oldPrice = oldPrice {
+                self.oldPrice = "$ \(oldPrice)"
+            }
+        }
     }
 }
