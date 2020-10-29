@@ -15,10 +15,13 @@ final class ProductsListViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            
+            // Register cells
             tableView.registerCells(classes: [
                 ProductListTableViewCell.self, ProductListLoadingTableViewCell.self
             ])
             
+            // Remove last cell separator
             tableView.tableFooterView = UIView(
                 frame: CGRect(origin: .zero, size: CGSize(width: tableView.frame.size.width, height: 1))
             )
@@ -97,6 +100,10 @@ extension ProductsListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension ProductsListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectRow(at: indexPath)
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height

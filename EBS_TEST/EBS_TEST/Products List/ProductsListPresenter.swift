@@ -11,6 +11,11 @@ final class ProductsListPresenter {
     
     weak var view: ProductsListViewProtocol?
     var interactor: ProductsListInteractorProtocol!
+    weak var router: ProductsListRouterProtocol?
+    
+    private var presentedProducts: [ProductViewModel] = [] {
+        didSet { view?.productViewModels = presentedProducts }
+    }
     
 }
 
@@ -22,12 +27,20 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
             DispatchQueue.main.async {
                 switch result {
                 case let .success(products):
-                    self?.view?.productViewModels = products.map(ProductViewModel.init)
+                    self?.presentedProducts = products.map(ProductViewModel.init)
                 case let .failure(error):
                     self?.view?.presentAlert(with: error.localizedDescription)
                 }
             }
         }
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        guard indexPath.row < presentedProducts.count else { return }
+        
+        let productId = presentedProducts[indexPath.row].product.id
+        
+        router?.pushToProductDetailsScreen(with: productId)
     }
 }
 

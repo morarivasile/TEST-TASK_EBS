@@ -20,6 +20,7 @@ protocol ProductsListViewProtocol: class {
 
 protocol ProductsListPresenterProtocol: class {
     func loadProductsList()
+    func didSelectRow(at indexPath: IndexPath)
 }
 
 // MARK: - Interactor
@@ -37,4 +38,10 @@ protocol ProductsListInteractorOutputProtocol: class {
 
 protocol ProductsListDataServiceProtocol: class {
     func getProducts(offset: Int, limit: Int, completion: @escaping (Result<[ProductResponse], Error>) -> Void)
+}
+
+// MARK: - Router
+
+protocol ProductsListRouterProtocol: class {
+    func pushToProductDetailsScreen(with productId: Int)
 }

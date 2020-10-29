@@ -24,10 +24,21 @@ final class MainCoordinator: Coordinator {
         viewController.presenter = presenter
         presenter.view = viewController
         presenter.interactor = interactor
+        presenter.router = self
         interactor.output = presenter
         interactor.dataService = dataService
         
         navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - ProductsListRouterProtocol
+
+extension MainCoordinator: ProductsListRouterProtocol {
+    func pushToProductDetailsScreen(with productId: Int) {
+        let child = ProductDetailsCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
     }
 }
 
@@ -37,8 +48,6 @@ final class CustomNavigationController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.barTintColor = .mainBlueColor
-        
-        
     }
     
 }
