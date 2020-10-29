@@ -11,6 +11,7 @@ import Foundation
 
 protocol ProductsListViewProtocol: class {
     var productViewModels: [ProductViewModel] { get set }
+    var shouldShowLoadingStateCell: Bool { get set }
     
     func presentAlert(with title: String?)
 }
@@ -25,6 +26,11 @@ protocol ProductsListPresenterProtocol: class {
 
 protocol ProductsListInteractorProtocol: class {
     func loadProductsList(completion: @escaping (Result<[ProductResponse], Error>) -> Void)
+}
+
+protocol ProductsListInteractorOutputProtocol: class {
+    func didStartFetchingProducts(pageNumber: Int)
+    func didFinishFetchingProducts(pageNumber: Int)
 }
 
 // MARK: - DataService

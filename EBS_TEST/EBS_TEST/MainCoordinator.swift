@@ -24,8 +24,21 @@ final class MainCoordinator: Coordinator {
         viewController.presenter = presenter
         presenter.view = viewController
         presenter.interactor = interactor
+        interactor.output = presenter
         interactor.dataService = dataService
         
         navigationController.pushViewController(viewController, animated: true)
     }
+}
+
+final class CustomNavigationController: UINavigationController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationBar.barTintColor = .mainBlueColor
+        
+        
+    }
+    
 }

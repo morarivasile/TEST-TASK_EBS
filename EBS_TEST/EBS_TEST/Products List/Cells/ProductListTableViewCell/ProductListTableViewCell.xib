@@ -3,16 +3,17 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="331" id="Gvc-qg-7z3" customClass="ProductListTableViewCell" customModule="EBS_TEST" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="739" height="331"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="363" id="Gvc-qg-7z3" customClass="ProductListTableViewCell" customModule="EBS_TEST" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="739" height="363"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gvc-qg-7z3" id="wCi-B4-60n">
-                <rect key="frame" x="0.0" y="0.0" width="739" height="331"/>
+                <rect key="frame" x="0.0" y="0.0" width="739" height="363"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAZ-lo-Dbw">
@@ -22,20 +23,20 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="HP Envy 15-AQ123 x360" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRr-yx-fD0">
-                        <rect key="frame" x="276" y="232" width="187" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="231.5" y="232" width="276" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                        <color key="textColor" name="titleBlue"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 980,-  $ 1100,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOL-f3-GLQ">
-                        <rect key="frame" x="305.5" y="289.5" width="128" height="25.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="295.5" y="301" width="148" height="46"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="15.6&quot; IPS tactil, Intel Core i7-7500U, 16 GB DDR4, SSD 256 GB, " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKE-fd-Jnp">
-                        <rect key="frame" x="127.5" y="261" width="484" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="91" y="269" width="557" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -65,7 +66,12 @@
                 <outlet property="subtitleLabel" destination="vKE-fd-Jnp" id="xRG-VZ-EUP"/>
                 <outlet property="titleLabel" destination="mRr-yx-fD0" id="slc-wx-Eav"/>
             </connections>
-            <point key="canvasLocation" x="-318.11594202898556" y="59.933035714285708"/>
+            <point key="canvasLocation" x="-318.11594202898556" y="70.647321428571431"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="titleBlue">
+            <color red="0.043137254901960784" green="0.098039215686274508" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

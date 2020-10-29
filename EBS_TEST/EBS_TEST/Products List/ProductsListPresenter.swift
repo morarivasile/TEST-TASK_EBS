@@ -30,3 +30,19 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
         }
     }
 }
+
+// MARK: - ProductsListInteractorOutputProtocol
+
+extension ProductsListPresenter: ProductsListInteractorOutputProtocol {
+    func didStartFetchingProducts(pageNumber: Int) {
+        if pageNumber > 1 {
+            view?.shouldShowLoadingStateCell = true
+        }
+    }
+    
+    func didFinishFetchingProducts(pageNumber: Int) {
+        if pageNumber > 1 {
+            view?.shouldShowLoadingStateCell = false
+        }
+    }
+}

@@ -9,11 +9,22 @@ import Foundation
 
 final class ProductsListInteractor {
     var dataService: ProductsListDataServiceProtocol?
+    weak var output: ProductsListInteractorOutputProtocol?
     
     private var productList: [ProductResponse] = []
+    private var canFetchMore: Bool = true
     private var currentPage: Int = 1
     private let pageSize: Int
-    private var isFetchInProgress = false
+    
+    private var isFetchInProgress = false {
+        didSet {
+            if isFetchInProgress {
+                output?.didStartFetchingProducts(pageNumber: currentPage)
+            } else {
+                output?.didFinishFetchingProducts(pageNumber: currentPage)
+            }
+        }
+    }
     
     private var offset: Int {
         return productList.count
@@ -32,23 +43,29 @@ final class ProductsListInteractor {
 
 extension ProductsListInteractor: ProductsListInteractorProtocol {
     func loadProductsList(completion: @escaping (Result<[ProductResponse], Error>) -> Void) {
-        guard !isFetchInProgress else { return }
+        guard !isFetchInProgress && canFetchMore else { return }
         
         isFetchInProgress = true
         
         dataService?.getProducts(offset: offset, limit: limit) { [weak self] result in
             guard let self = self else { return }
-            
-            switch result {
-            case let .success(products):
-                self.productList.append(contentsOf: products)
-                self.currentPage += 1
-                completion(.success(self.productList))
-            case let .failure(error):
-                completion(.failure(error))
+        
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Testing purpose
+                
+                self.isFetchInProgress = false
+                
+                switch result {
+                case let .success(products):
+                    self.productList.append(contentsOf: products)
+                    self.currentPage += 1
+                    self.canFetchMore = !(products.count < self.limit)
+                    completion(.success(self.productList))
+                case let .failure(error):
+                    completion(.failure(error))
+                }
+                
             }
             
-            self.isFetchInProgress = false
         }
     }
 }
