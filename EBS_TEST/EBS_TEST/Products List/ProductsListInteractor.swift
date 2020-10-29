@@ -8,8 +8,13 @@
 import Foundation
 
 final class ProductsListInteractor {
+    
+    // MARK: Public properties
+    
     var dataService: ProductsListDataServiceProtocol?
     weak var output: ProductsListInteractorOutputProtocol?
+    
+    // MARK: Private properties
     
     private var productList: [ProductResponse] = []
     private var canFetchMore: Bool = true
@@ -26,6 +31,8 @@ final class ProductsListInteractor {
         }
     }
     
+    // MARK: Computed properties
+    
     private var offset: Int {
         return productList.count
     }
@@ -33,6 +40,8 @@ final class ProductsListInteractor {
     private var limit: Int {
         return pageSize
     }
+    
+    // MARK: Initializers
     
     init(pageSize: Int = 10) {
         self.pageSize = pageSize

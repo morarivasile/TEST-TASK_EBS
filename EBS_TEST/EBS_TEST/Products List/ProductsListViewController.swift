@@ -9,6 +9,8 @@ import UIKit
 
 final class ProductsListViewController: UIViewController {
     
+    // MARK: IBOutlets
+    
     @IBOutlet weak private var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -22,6 +24,8 @@ final class ProductsListViewController: UIViewController {
             )
         }
     }
+    
+    // MARK: Public properties
     
     var presenter: ProductsListPresenterProtocol!
     
@@ -39,9 +43,13 @@ final class ProductsListViewController: UIViewController {
         didSet { tableView.reloadData() }
     }
     
+    // MARK: Private properties
+    
     private var loadingStateCellPosition: IndexPath {
         return IndexPath(row: productViewModels.count, section: 0)
     }
+    
+    // MARK: VC Lyfecycle
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +59,8 @@ final class ProductsListViewController: UIViewController {
         setNavigationTitleImageView(with: "header")
         presenter.loadProductsList()
     }
+    
+    // MARK: Private API
     
     private func getReuseIdentifier(for indexPath: IndexPath) -> String {
         if shouldShowLoadingStateCell && indexPath == loadingStateCellPosition {

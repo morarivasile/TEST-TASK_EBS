@@ -8,8 +8,8 @@
 import UIKit
 import Foundation
 
-
 final class ProductListTableViewCell: UITableViewCell {
+    
     @IBOutlet weak private var productImageView: UIImageView!
     
     @IBOutlet weak private var titleLabel: UILabel!
@@ -17,6 +17,11 @@ final class ProductListTableViewCell: UITableViewCell {
     @IBOutlet weak private var subtitleLabel: UILabel!
     
     @IBOutlet weak private var priceLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        productImageView.image = nil
+    }
     
     func configure(for viewModel: ProductViewModel) {
         titleLabel.text = viewModel.title
@@ -27,25 +32,30 @@ final class ProductListTableViewCell: UITableViewCell {
     
     private func getAttributedPrice(from model: ProductViewModel.DisplayPrice) -> NSAttributedString {
         if let oldPrice = model.oldPrice {
-            let priceString = NSMutableAttributedString(string: "\(model.price) - ", attributes: [
-                .font: UIFont.systemFont(ofSize: 24, weight: .regular),
-                .foregroundColor: UIColor.priceBlue
-            ])
             
-            let oldPriceString = NSAttributedString(string: oldPrice, attributes: [
-                .font: UIFont.systemFont(ofSize: 20, weight: .regular),
-                .foregroundColor: UIColor.oldPriceGray,
-                NSAttributedString.Key.strikethroughStyle: 1
-            ])
+            let priceString = getMainAttributedPrice("\(model.price) - ")
+            let oldPriceString = getSecondartAttributedPrice(oldPrice)
             
             priceString.append(oldPriceString)
             
             return priceString
         } else {
-            return NSAttributedString(string: model.price, attributes: [
-                .font: UIFont.systemFont(ofSize: 24, weight: .regular),
-                .foregroundColor: UIColor.priceBlue
-            ])
+            return getMainAttributedPrice(model.price)
         }
+    }
+    
+    private func getMainAttributedPrice(_ price: String) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: price, attributes: [
+            .font: UIFont.systemFont(ofSize: 24, weight: .regular),
+            .foregroundColor: UIColor.priceBlue
+        ])
+    }
+    
+    private func getSecondartAttributedPrice(_ price: String) -> NSAttributedString {
+        return NSAttributedString(string: price, attributes: [
+            .font: UIFont.systemFont(ofSize: 20, weight: .regular),
+            .foregroundColor: UIColor.oldPriceGray,
+            NSAttributedString.Key.strikethroughStyle: 1
+        ])
     }
 }

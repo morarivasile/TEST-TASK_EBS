@@ -38,7 +38,7 @@ extension UIViewController {
     func setRightBarButton(with imageName: String) {
         let button: UIButton = {
             let button = UIButton(type: .custom)
-            button.setImage(UIImage (named: imageName), for: .normal)
+            button.setImage(UIImage (named: imageName)?.withRenderingMode(.alwaysOriginal), for: .normal)
             button.imageView?.contentMode = .scaleAspectFit
             button.imageEdgeInsets = .init(top: 0, left: 30, bottom: 16, right: 0)
             return button
@@ -50,7 +50,7 @@ extension UIViewController {
     func setLeftBarButton(with imageName: String) {
         let button: UIButton = {
             let button = UIButton(type: .custom)
-            button.setImage(UIImage (named: imageName), for: .normal)
+            button.setImage(UIImage (named: imageName)?.withRenderingMode(.alwaysOriginal), for: .normal)
             button.imageView?.contentMode = .scaleAspectFit
             button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 16, right: 5)
             return button

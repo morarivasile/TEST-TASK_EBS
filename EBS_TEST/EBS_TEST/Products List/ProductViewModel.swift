@@ -37,6 +37,11 @@ struct ProductViewModel {
         self.product = product
     }
     
+}
+
+// MARK: - DisplayPrice
+
+extension ProductViewModel {
     struct DisplayPrice {
         let price: String
         var oldPrice: String? = nil
