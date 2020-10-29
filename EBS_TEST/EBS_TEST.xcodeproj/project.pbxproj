@@ -108,13 +108,12 @@
 		C308612F2549CD3500D43A32 /* EBS_TEST */ = {
 			isa = PBXGroup;
 			children = (
+				C30861302549CD3500D43A32 /* AppDelegate.swift */,
+				C3F966C9254B8367000D0FD7 /* Screens */,
 				C3F966C5254B82C5000D0FD7 /* Coordinators */,
 				C30C0054254B2C6400AFB468 /* Extensions */,
-				C30C0019254A021500AFB468 /* Image Cache */,
-				C30861302549CD3500D43A32 /* AppDelegate.swift */,
+				C30C0019254A021500AFB468 /* Image Caching */,
 				C308616B2549D2FA00D43A32 /* Networking */,
-				C308615B2549CF6200D43A32 /* Products List */,
-				C308615C2549CF6D00D43A32 /* Product Details */,
 				C308614B2549CE2A00D43A32 /* Protocols */,
 				C308615E2549CF9A00D43A32 /* Resources */,
 				C308615D2549CF8300D43A32 /* Supporting Files */,
@@ -200,14 +199,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		C30C0019254A021500AFB468 /* Image Cache */ = {
+		C30C0019254A021500AFB468 /* Image Caching */ = {
 			isa = PBXGroup;
 			children = (
 				C30C001A254A023700AFB468 /* ImageCache.swift */,
 				C30C001D254A027900AFB468 /* ImageURLProtocol.swift */,
 				C30C0020254A02A600AFB468 /* ImageItem.swift */,
 			);
-			path = "Image Cache";
+			path = "Image Caching";
 			sourceTree = "<group>";
 		};
 		C30C0054254B2C6400AFB468 /* Extensions */ = {
@@ -247,6 +246,15 @@
 				C3F966C6254B82D7000D0FD7 /* ProductDetailsCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		C3F966C9254B8367000D0FD7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C308615B2549CF6200D43A32 /* Products List */,
+				C308615C2549CF6D00D43A32 /* Product Details */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
