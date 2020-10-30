@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,24 +22,6 @@
                             <constraint firstAttribute="height" priority="999" constant="200" id="P0P-17-EBg"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="HP Envy 15-AQ123 x360" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRr-yx-fD0">
-                        <rect key="frame" x="231.5" y="232" width="276" height="29"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                        <color key="textColor" name="titleBlue"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 980,-  $ 1100,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOL-f3-GLQ">
-                        <rect key="frame" x="295.5" y="301" width="148" height="46"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="15.6&quot; IPS tactil, Intel Core i7-7500U, 16 GB DDR4, SSD 256 GB, " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKE-fd-Jnp">
-                        <rect key="frame" x="91" y="269" width="557" height="24"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVq-ax-B8Q">
                         <rect key="frame" x="679" y="32" width="44" height="44"/>
                         <constraints>
@@ -51,42 +32,35 @@
                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                         <state key="normal" image="favorite_empty"/>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s7-Qk-epl" customClass="ProductShortInfoView" customModule="EBS_TEST" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="232" width="739" height="115"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VAZ-lo-Dbw" firstAttribute="top" secondItem="wCi-B4-60n" secondAttribute="top" constant="16" id="AER-MQ-sVj"/>
-                    <constraint firstItem="mRr-yx-fD0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wCi-B4-60n" secondAttribute="leadingMargin" constant="16" id="IU3-aD-oIZ"/>
-                    <constraint firstItem="vKE-fd-Jnp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wCi-B4-60n" secondAttribute="leading" constant="16" id="JzB-Xj-hfK"/>
-                    <constraint firstItem="kOL-f3-GLQ" firstAttribute="centerX" secondItem="wCi-B4-60n" secondAttribute="centerX" id="TtK-Uu-DhB"/>
-                    <constraint firstItem="vKE-fd-Jnp" firstAttribute="centerX" secondItem="wCi-B4-60n" secondAttribute="centerX" id="Y9z-Ye-Nwr"/>
-                    <constraint firstItem="kOL-f3-GLQ" firstAttribute="top" secondItem="vKE-fd-Jnp" secondAttribute="bottom" constant="8" symbolic="YES" id="ZCm-AN-Jgb"/>
+                    <constraint firstItem="1s7-Qk-epl" firstAttribute="leading" secondItem="wCi-B4-60n" secondAttribute="leading" id="OjE-W6-fID"/>
+                    <constraint firstAttribute="trailing" secondItem="1s7-Qk-epl" secondAttribute="trailing" id="SrC-S8-Y7S"/>
                     <constraint firstItem="VAZ-lo-Dbw" firstAttribute="leading" secondItem="wCi-B4-60n" secondAttribute="leading" id="ZhK-UC-Xaj"/>
-                    <constraint firstItem="mRr-yx-fD0" firstAttribute="centerX" secondItem="wCi-B4-60n" secondAttribute="centerX" id="ZxH-y7-lSf"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kOL-f3-GLQ" secondAttribute="trailing" constant="16" id="e4s-9s-3gs"/>
+                    <constraint firstAttribute="bottom" secondItem="1s7-Qk-epl" secondAttribute="bottom" constant="16" id="a8L-rZ-sx8"/>
                     <constraint firstItem="SVq-ax-B8Q" firstAttribute="top" secondItem="VAZ-lo-Dbw" secondAttribute="top" constant="16" id="jkh-xS-l5Q"/>
-                    <constraint firstItem="kOL-f3-GLQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wCi-B4-60n" secondAttribute="leading" constant="16" id="k1t-dX-4qv"/>
-                    <constraint firstItem="mRr-yx-fD0" firstAttribute="top" secondItem="VAZ-lo-Dbw" secondAttribute="bottom" constant="16" id="kvx-Fk-vHG"/>
                     <constraint firstAttribute="trailing" secondItem="SVq-ax-B8Q" secondAttribute="trailing" constant="16" id="loo-a6-zQj"/>
                     <constraint firstAttribute="trailing" secondItem="VAZ-lo-Dbw" secondAttribute="trailing" id="ncz-P0-yGD"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vKE-fd-Jnp" secondAttribute="trailing" constant="16" id="p9K-lk-XC3"/>
-                    <constraint firstAttribute="bottom" secondItem="kOL-f3-GLQ" secondAttribute="bottom" constant="16" id="qMf-js-xhA"/>
-                    <constraint firstItem="vKE-fd-Jnp" firstAttribute="top" secondItem="mRr-yx-fD0" secondAttribute="bottom" constant="8" symbolic="YES" id="xAW-of-ftx"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="mRr-yx-fD0" secondAttribute="trailing" constant="16" id="xfo-03-DBe"/>
+                    <constraint firstItem="1s7-Qk-epl" firstAttribute="top" secondItem="VAZ-lo-Dbw" secondAttribute="bottom" constant="16" id="qhC-XQ-Zkt"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="priceLabel" destination="kOL-f3-GLQ" id="Nfp-uq-o0F"/>
                 <outlet property="productImageView" destination="VAZ-lo-Dbw" id="ZA5-7u-Da6"/>
-                <outlet property="subtitleLabel" destination="vKE-fd-Jnp" id="xRG-VZ-EUP"/>
-                <outlet property="titleLabel" destination="mRr-yx-fD0" id="slc-wx-Eav"/>
+                <outlet property="shortInfoView" destination="1s7-Qk-epl" id="ol2-pu-P88"/>
             </connections>
             <point key="canvasLocation" x="-318.11594202898556" y="70.647321428571431"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="favorite_empty" width="61" height="53"/>
-        <namedColor name="titleBlue">
-            <color red="0.043000001460313797" green="0.097999997437000275" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

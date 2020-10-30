@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductShortInfoView" customModule="EBS_TEST" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductShortInfoView" customModule="EBS_TEST" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="HP Envy 15-AQ123 x360" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-ca-eBT">
+                    <rect key="frame" x="69" y="16" width="276" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" name="titleBlue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 980,-  $ 1100,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oY4-6m-791">
+                    <rect key="frame" x="133" y="109" width="148" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="15.6&quot; IPS tactil, Intel Core i7-7500U, 16 GB DDR4, SSD 256 GB, " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMj-r5-cVS">
+                    <rect key="frame" x="19" y="53" width="376" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oY4-6m-791" firstAttribute="top" secondItem="PMj-r5-cVS" secondAttribute="bottom" constant="8" symbolic="YES" id="3V5-Uo-2iT"/>
+                <constraint firstItem="LQm-ca-eBT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AM1-Uq-Wb3"/>
+                <constraint firstItem="LQm-ca-eBT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="OI3-uu-EIY"/>
+                <constraint firstItem="oY4-6m-791" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Siu-We-nrX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oY4-6m-791" secondAttribute="trailing" constant="16" id="bX7-Uy-c2n"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PMj-r5-cVS" secondAttribute="trailing" constant="16" id="c8i-78-n8Z"/>
+                <constraint firstItem="PMj-r5-cVS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dIe-4M-GZo"/>
+                <constraint firstItem="LQm-ca-eBT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="dZN-5k-cfT"/>
+                <constraint firstItem="PMj-r5-cVS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="eS9-Rj-Npm"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LQm-ca-eBT" secondAttribute="trailing" constant="16" id="ftQ-YJ-310"/>
+                <constraint firstItem="PMj-r5-cVS" firstAttribute="top" secondItem="LQm-ca-eBT" secondAttribute="bottom" constant="8" symbolic="YES" id="g55-Yb-ZqK"/>
+                <constraint firstItem="oY4-6m-791" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="vUr-qp-g44"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oY4-6m-791" secondAttribute="bottom" constant="16" id="yt0-Eq-p2a"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="priceLabel" destination="oY4-6m-791" id="H7z-zi-0Ss"/>
+                <outlet property="subtitleLabel" destination="PMj-r5-cVS" id="sZt-kL-hNE"/>
+                <outlet property="titleLabel" destination="LQm-ca-eBT" id="8th-jH-gPb"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-97.098214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="titleBlue">
+            <color red="0.043000001460313797" green="0.097999997437000275" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
