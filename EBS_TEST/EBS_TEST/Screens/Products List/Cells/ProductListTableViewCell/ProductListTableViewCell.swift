@@ -28,5 +28,4 @@ final class ProductListTableViewCell: UITableViewCell {
         productImageView.setImage(stringURL: viewModel.imageStringURL)
     }
     
-    
 }

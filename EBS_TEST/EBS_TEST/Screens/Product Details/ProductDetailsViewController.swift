@@ -1,4 +1,4 @@
-//
+
 //  ProductDetailsViewController.swift
 //  EBS_TEST
 //
@@ -8,5 +8,16 @@
 import UIKit
 
 final class ProductDetailsViewController: UIViewController {
+    
+    @IBOutlet weak private var tableView: UITableView! {
+        didSet {
+            tableView.registerCells(classes: [
+                ImageTableViewCell.self,
+                ProductShortInfoTableViewCell.self,
+                InformationTableViewCell.self,
+                ProductInfoPoints.self
+            ])
+        }
+    }
     
 }

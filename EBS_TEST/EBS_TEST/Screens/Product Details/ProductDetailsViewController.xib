@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="EBS_TEST" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="zNr-zL-BmO" id="PLi-XW-0Ib"/>
                 <outlet property="view" destination="iN0-l3-epB" id="WLJ-xp-8U8"/>
             </connections>
         </placeholder>
@@ -17,9 +18,21 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zNr-zL-BmO">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-246" y="153"/>
+            <constraints>
+                <constraint firstItem="zNr-zL-BmO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="GrL-yM-4yz"/>
+                <constraint firstItem="zNr-zL-BmO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZAE-6r-Ayf"/>
+                <constraint firstItem="zNr-zL-BmO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="b1c-jO-fHV"/>
+                <constraint firstAttribute="bottom" secondItem="zNr-zL-BmO" secondAttribute="bottom" id="c1O-zo-ANV"/>
+            </constraints>
+            <point key="canvasLocation" x="-246.37681159420291" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>

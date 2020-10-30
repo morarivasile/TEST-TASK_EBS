@@ -17,6 +17,7 @@ final class ProductShortInfoView: UIView {
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textAlignment = .center
         label.textColor = .titleBlue
+        label.numberOfLines = 0
         return label
     }()
     
@@ -26,6 +27,7 @@ final class ProductShortInfoView: UIView {
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         label.textAlignment = .center
         label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     
@@ -33,6 +35,7 @@ final class ProductShortInfoView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
         return label
     }()
     
