@@ -13,6 +13,7 @@ final class ProductsListInteractor {
     
     var dataService: ProductsListDataServiceProtocol?
     weak var output: ProductsListInteractorOutputProtocol?
+    var favoriteListManager: LocalFavoriteProductListManager?
     
     // MARK: Private properties
     
@@ -51,7 +52,7 @@ final class ProductsListInteractor {
 // MARK: - ProductsListInteractorProtocol
 
 extension ProductsListInteractor: ProductsListInteractorProtocol {
-    func loadProductsList(completion: @escaping (Result<[ProductResponse], Error>) -> Void) {
+    func loadProductsList(completion: @escaping (Result<[(ProductResponse, Bool)], Error>) -> Void) {
         guard !isFetchInProgress && canFetchMore else { return }
         
         isFetchInProgress = true
@@ -68,7 +69,10 @@ extension ProductsListInteractor: ProductsListInteractorProtocol {
                     self.productList.append(contentsOf: products)
                     self.currentPage += 1
                     self.canFetchMore = !(products.count < self.limit)
-                    completion(.success(self.productList))
+                    
+                    let favoritesProductList = self.productList.map { ($0, self.favoriteListManager?.favoriteProductsIdentifiers.contains($0.id) ?? false)}
+                    
+                    completion(.success(favoritesProductList))
                 case let .failure(error):
                     completion(.failure(error))
                 }
@@ -77,4 +81,17 @@ extension ProductsListInteractor: ProductsListInteractorProtocol {
             
         }
     }
+    
+    func updateFavoriteStatusFor(productId: Int, isFavorite: Bool) {
+        if isFavorite {
+            favoriteListManager?.saveToFavorite(productIdentifier: productId)
+        } else {
+            favoriteListManager?.deleteFromFavorites(productIdentifier: productId)
+        }
+    }
+    
+    func getCurrentUpdatedProducts() -> [(ProductResponse, Bool)] {
+        return productList.map { ($0, favoriteListManager?.favoriteProductsIdentifiers.contains($0.id) ?? false)}
+    }
+
 }

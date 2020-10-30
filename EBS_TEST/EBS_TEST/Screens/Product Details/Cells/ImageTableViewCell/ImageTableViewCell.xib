@@ -21,19 +21,38 @@
                             <constraint firstAttribute="height" priority="999" constant="200" id="uLs-s1-bNY"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrD-3z-17V">
+                        <rect key="frame" x="354" y="36" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="DT5-sQ-eTO"/>
+                            <constraint firstAttribute="width" constant="44" id="RHg-Tm-vNm"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                        <state key="normal" image="favorite_empty"/>
+                        <connections>
+                            <action selector="didTapOnFavoriteButton:" destination="85i-3F-yri" eventType="touchUpInside" id="Dsn-OG-hHT"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="yQX-OA-li9" secondAttribute="trailing" id="1kh-6e-7Q0"/>
                     <constraint firstItem="yQX-OA-li9" firstAttribute="leading" secondItem="DT1-m3-9Ya" secondAttribute="leading" id="4w1-6A-FKd"/>
                     <constraint firstAttribute="bottom" secondItem="yQX-OA-li9" secondAttribute="bottom" constant="20" id="G0D-mU-3ME"/>
                     <constraint firstItem="yQX-OA-li9" firstAttribute="top" secondItem="DT1-m3-9Ya" secondAttribute="top" constant="20" id="RGZ-Jb-a7G"/>
+                    <constraint firstAttribute="trailing" secondItem="SrD-3z-17V" secondAttribute="trailing" constant="16" id="TZi-yu-53V"/>
+                    <constraint firstItem="SrD-3z-17V" firstAttribute="top" secondItem="yQX-OA-li9" secondAttribute="top" constant="16" id="mLf-zH-3GE"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="cellIMageView" destination="yQX-OA-li9" id="cn4-50-G5g"/>
+                <outlet property="favoriteButton" destination="SrD-3z-17V" id="qzo-2r-4fG"/>
             </connections>
             <point key="canvasLocation" x="31.884057971014496" y="130.24553571428572"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="favorite_empty" width="61" height="53"/>
+    </resources>
 </document>

@@ -22,7 +22,7 @@ struct DisplayPrice {
     }
 }
 
-struct ProductViewModel {
+class ProductViewModel {
     
     private(set) var product: ProductResponse
     
@@ -45,8 +45,11 @@ struct ProductViewModel {
         )
     }
     
-    init(_ product: ProductResponse) {
+    var isFavorite: Bool
+    
+    init(_ product: ProductResponse, _ isFavorite: Bool) {
         self.product = product
+        self.isFavorite = isFavorite
     }
     
 }

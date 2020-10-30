@@ -22,6 +22,8 @@ protocol ProductDetailsPresenterProtocol: class {
 // MARK: - Interactor
 
 protocol ProductDetailsInteractorProtocol: class {
+    var isProductFavorite: Bool { get set }
+    
     func loadProduct(completion: @escaping (Result<ProductResponse, Error>) -> Void)
 }
 

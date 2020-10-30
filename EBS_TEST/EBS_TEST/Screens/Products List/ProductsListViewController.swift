@@ -62,6 +62,14 @@ final class ProductsListViewController: UIViewController {
         presenter.loadProductsList()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // MARK: - should be replaced with notification system (I was running out of time).
+        
+        presenter.updateFavoritesData()
+    }
+    
     // MARK: Private API
     
     private func getReuseIdentifier(for indexPath: IndexPath) -> String {
@@ -86,6 +94,7 @@ extension ProductsListViewController: UITableViewDataSource {
         
         if let productCell = cell as? ProductListTableViewCell {
             productCell.configure(for: productViewModels[indexPath.row])
+            productCell.delegate = self
         }
         
         if let loadingCell = cell as? ProductListLoadingTableViewCell {
@@ -121,5 +130,15 @@ extension ProductsListViewController: ProductsListViewProtocol {
         ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         
         present(ac, animated: true)
+    }
+}
+
+// MARK: - ProductListTableViewCellDelegate
+
+extension ProductsListViewController: ProductListTableViewCellDelegate {
+    func didTapFavoriteButton(_ cell: ProductListTableViewCell, isFavorite: Bool) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        presenter.updateProduct(at: indexPath, isFavorite: isFavorite)
     }
 }

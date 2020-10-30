@@ -29,6 +29,7 @@ final class ProductDetailsCoordinator: Coordinator {
         presenter.view = viewController
         interactor.output = presenter
         interactor.dataService = dataService
+        interactor.favoriteListManager = UserDefaultsProductsListFavoritesManager()
         
         navigationController.pushViewController(viewController, animated: true)
     }

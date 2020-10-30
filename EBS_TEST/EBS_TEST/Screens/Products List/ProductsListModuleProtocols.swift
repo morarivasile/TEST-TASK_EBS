@@ -20,13 +20,17 @@ protocol ProductsListViewProtocol: LoadingViewCompatible {
 
 protocol ProductsListPresenterProtocol: class {
     func loadProductsList()
+    func updateFavoritesData()
     func didSelectRow(at indexPath: IndexPath)
+    func updateProduct(at indexPath: IndexPath, isFavorite: Bool)
 }
 
 // MARK: - Interactor
 
 protocol ProductsListInteractorProtocol: class {
-    func loadProductsList(completion: @escaping (Result<[ProductResponse], Error>) -> Void)
+    func loadProductsList(completion: @escaping (Result<[(ProductResponse, Bool)], Error>) -> Void)
+    func updateFavoriteStatusFor(productId: Int, isFavorite: Bool)
+    func getCurrentUpdatedProducts() -> [(ProductResponse, Bool)]
 }
 
 protocol ProductsListInteractorOutputProtocol: class {
@@ -44,4 +48,11 @@ protocol ProductsListDataServiceProtocol: class {
 
 protocol ProductsListRouterProtocol: class {
     func pushToProductDetailsScreen(with productResponse: ProductResponse)
+}
+
+protocol LocalFavoriteProductListManager: class {
+    var favoriteProductsIdentifiers: [Int] { get }
+    
+    func saveToFavorite(productIdentifier: Int)
+    func deleteFromFavorites(productIdentifier: Int)
 }

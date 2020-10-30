@@ -40,6 +40,15 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
         
         router?.pushToProductDetailsScreen(with: presentedProducts[indexPath.row].product)
     }
+    
+    func updateProduct(at indexPath: IndexPath, isFavorite: Bool) {
+        let product = presentedProducts[indexPath.row].product
+        interactor.updateFavoriteStatusFor(productId: product.id, isFavorite: isFavorite)
+    }
+    
+    func updateFavoritesData() {
+        presentedProducts = interactor.getCurrentUpdatedProducts().map(ProductViewModel.init)
+    }
 }
 
 // MARK: - ProductsListInteractorOutputProtocol

@@ -27,6 +27,7 @@ final class MainCoordinator: Coordinator {
         presenter.router = self
         interactor.output = presenter
         interactor.dataService = dataService
+        interactor.favoriteListManager = UserDefaultsProductsListFavoritesManager()
         
         navigationController.pushViewController(viewController, animated: true)
     }
