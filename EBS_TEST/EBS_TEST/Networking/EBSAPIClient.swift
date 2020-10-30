@@ -34,7 +34,9 @@ extension EBSAPIClient: ProductsListDataServiceProtocol {
     }
 }
 
-extension EBSAPIClient {
+// MARK: - ProductDetailsDataServiceProtocol
+
+extension EBSAPIClient: ProductDetailsDataServiceProtocol {
     func getProduct(id: Int, completion: @escaping (Result<ProductResponse, Error>) -> Void) {
         do {
             let url = try formURL(string: "http://mobile-test.devebs.net:5000/product", items: [

@@ -11,12 +11,24 @@ final class ProductDetailsCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    private var inputData: ProductDetailsInteractorInputData
+    
+    init(navigationController: UINavigationController, data: ProductDetailsInteractorInputData) {
         self.navigationController = navigationController
+        self.inputData = data
     }
     
     func start() {
         let viewController = ProductDetailsViewController.nibLoaded
+        let presenter = ProductDetailsPresenter()
+        let interactor = ProductDetailsInteractor(data: inputData)
+        let dataService = EBSAPIClient()
+        
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        presenter.view = viewController
+        interactor.output = presenter
+        interactor.dataService = dataService
         
         navigationController.pushViewController(viewController, animated: true)
     }

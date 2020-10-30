@@ -8,26 +8,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductInfoPoints" rowHeight="152" id="85i-3F-yri" customClass="ProductInfoPoints" customModule="EBS_TEST" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductInfoPointsTableViewCell" rowHeight="152" id="85i-3F-yri" customClass="ProductInfoPointsTableViewCell" customModule="EBS_TEST" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="85i-3F-yri" id="DT1-m3-9Ya">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BAb-I3-n59">
-                        <rect key="frame" x="0.0" y="1" width="414" height="152"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BAb-I3-n59">
+                        <rect key="frame" x="0.0" y="16" width="414" height="136"/>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="BAb-I3-n59" firstAttribute="leading" secondItem="DT1-m3-9Ya" secondAttribute="leading" id="4UP-bp-8RU"/>
                     <constraint firstAttribute="trailing" secondItem="BAb-I3-n59" secondAttribute="trailing" id="F75-IL-lsu"/>
                     <constraint firstAttribute="bottom" secondItem="BAb-I3-n59" secondAttribute="bottom" id="Lt7-7U-J3r"/>
-                    <constraint firstItem="BAb-I3-n59" firstAttribute="top" secondItem="DT1-m3-9Ya" secondAttribute="top" id="gFN-q9-eJd"/>
+                    <constraint firstItem="BAb-I3-n59" firstAttribute="top" secondItem="DT1-m3-9Ya" secondAttribute="top" constant="16" id="gFN-q9-eJd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="stackView" destination="BAb-I3-n59" id="mzP-Mi-JgH"/>
+                <outlet property="stackView" destination="BAb-I3-n59" id="XHS-dA-NXf"/>
             </connections>
             <point key="canvasLocation" x="31.884057971014496" y="105.80357142857143"/>
         </tableViewCell>

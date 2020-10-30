@@ -35,19 +35,13 @@ final class MainCoordinator: Coordinator {
 // MARK: - ProductsListRouterProtocol
 
 extension MainCoordinator: ProductsListRouterProtocol {
-    func pushToProductDetailsScreen(with productId: Int) {
-        let child = ProductDetailsCoordinator(navigationController: navigationController)
+    func pushToProductDetailsScreen(with productResponse: ProductResponse) {
+        let child = ProductDetailsCoordinator(
+            navigationController: navigationController,
+            data: .productId(productResponse.id)
+        )
+        
         childCoordinators.append(child)
         child.start()
     }
-}
-
-final class CustomNavigationController: UINavigationController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationBar.barTintColor = .mainBlueColor
-    }
-    
 }

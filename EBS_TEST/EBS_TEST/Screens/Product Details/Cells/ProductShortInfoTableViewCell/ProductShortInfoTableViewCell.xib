@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductShortInfoTableViewCell" rowHeight="128" id="85i-3F-yri" customClass="ProductShortInfoTableViewCell" customModule="EBS_TEST" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductShortInfoTableViewCell" rowHeight="128" id="85i-3F-yri" customClass="ProductShortInfoTableViewCell" customModule="EBS_TEST" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="85i-3F-yri" id="DT1-m3-9Ya">
@@ -28,6 +28,7 @@
                     <constraint firstItem="OQy-UW-tf9" firstAttribute="leading" secondItem="DT1-m3-9Ya" secondAttribute="leading" id="qbr-E9-JzY"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
             <connections>
                 <outlet property="shortInfoView" destination="OQy-UW-tf9" id="VPN-tP-p1P"/>
             </connections>

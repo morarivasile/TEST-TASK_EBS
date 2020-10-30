@@ -11,7 +11,12 @@ final class ImageTableViewCell: UITableViewCell {
     
     @IBOutlet weak private var cellIMageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cellIMageView.image = nil
+    }
+    
+    func setImage(imageStringURL: String) {
+        cellIMageView.setImage(stringURL: imageStringURL)
     }
 }

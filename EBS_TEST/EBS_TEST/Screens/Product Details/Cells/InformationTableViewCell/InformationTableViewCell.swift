@@ -9,9 +9,9 @@ import UIKit
 
 final class InformationTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak private var infoLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func setInfo(_ info: String) {
+        infoLabel.text = info
     }
 }

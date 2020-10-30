@@ -7,6 +7,21 @@
 
 import Foundation
 
+struct DisplayPrice {
+    let price: String
+    var oldPrice: String? = nil
+    
+    init(price: Int, salePrecent: Int?) {
+        if let percent = salePrecent, percent > 0 {
+            self.price = "$ \(price - (price * percent / 100))"
+            self.oldPrice = "$ \(price)"
+        } else {
+            self.price = "$ \(price)"
+            self.oldPrice = nil
+        }
+    }
+}
+
 struct ProductViewModel {
     
     private(set) var product: ProductResponse
@@ -24,34 +39,14 @@ struct ProductViewModel {
     }
     
     var displayPrice: DisplayPrice {
-        if let percent = product.salePrecent, percent > 0 {
-            let price = product.price - (product.price * percent / 100)
-            return .init(price: price, oldPrice: product.price)
-        } else {
-            return .init(price: product.price, oldPrice: nil)
-        }
+        return DisplayPrice(
+            price: product.price,
+            salePrecent: product.salePrecent
+        )
     }
-    
     
     init(_ product: ProductResponse) {
         self.product = product
     }
     
-}
-
-// MARK: - DisplayPrice
-
-extension ProductViewModel {
-    struct DisplayPrice {
-        let price: String
-        var oldPrice: String? = nil
-        
-        init(price: Int, oldPrice: Int?) {
-            self.price = "$ \(price)"
-            
-            if let oldPrice = oldPrice {
-                self.oldPrice = "$ \(oldPrice)"
-            }
-        }
-    }
 }

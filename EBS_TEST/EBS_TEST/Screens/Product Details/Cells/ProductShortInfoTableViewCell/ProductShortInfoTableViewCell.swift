@@ -11,8 +11,9 @@ final class ProductShortInfoTableViewCell: UITableViewCell {
     
     @IBOutlet weak private var shortInfoView: ProductShortInfoView!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func setInfo(_ title: String, subtitle: String, displayPrice: DisplayPrice) {
+        shortInfoView.setTitle(title)
+        shortInfoView.setSubtitle(subtitle)
+        shortInfoView.setPriceLabel(price: displayPrice.price, oldPrice: displayPrice.oldPrice)
     }
 }

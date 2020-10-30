@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - View
 
-protocol ProductsListViewProtocol: class {
+protocol ProductsListViewProtocol: LoadingViewCompatible {
     var productViewModels: [ProductViewModel] { get set }
     var shouldShowLoadingStateCell: Bool { get set }
     
@@ -43,5 +43,5 @@ protocol ProductsListDataServiceProtocol: class {
 // MARK: - Router
 
 protocol ProductsListRouterProtocol: class {
-    func pushToProductDetailsScreen(with productId: Int)
+    func pushToProductDetailsScreen(with productResponse: ProductResponse)
 }

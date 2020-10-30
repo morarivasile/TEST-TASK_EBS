@@ -38,9 +38,7 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
     func didSelectRow(at indexPath: IndexPath) {
         guard indexPath.row < presentedProducts.count else { return }
         
-        let productId = presentedProducts[indexPath.row].product.id
-        
-        router?.pushToProductDetailsScreen(with: productId)
+        router?.pushToProductDetailsScreen(with: presentedProducts[indexPath.row].product)
     }
 }
 
@@ -50,12 +48,16 @@ extension ProductsListPresenter: ProductsListInteractorOutputProtocol {
     func didStartFetchingProducts(pageNumber: Int) {
         if pageNumber > 1 {
             view?.shouldShowLoadingStateCell = true
+        } else {
+            view?.showLoadingView()
         }
     }
     
     func didFinishFetchingProducts(pageNumber: Int) {
         if pageNumber > 1 {
             view?.shouldShowLoadingStateCell = false
+        } else {
+            view?.hideLoadingView()
         }
     }
 }

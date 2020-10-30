@@ -59,7 +59,6 @@ final class ProductsListViewController: UIViewController {
         
         setLeftBarButton(with: "profile_icon")
         setRightBarButton(with: "favorite_empty")
-        setNavigationTitleImageView(with: "header")
         presenter.loadProductsList()
     }
     
